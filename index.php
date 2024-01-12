@@ -21,18 +21,18 @@
                                 <img src="imagenes/logo.jpg" style="width: 185px;" alt="logo">
                                 <h4 class="mt-1 mb-5 pg-1">Bienvenido al sistema</h4>
                             </div>
-                            <form action="">
+                            <form action="login.php" method="POST">
                                 <p>Ingresa los datos de tu cuenta</p>
                                 <div class="form-outline mb-5">
                                     <label for="" class="form-label">Usuario</label>
-                                    <input type="email" id="usuario" class="form-control" placeholder="Usuario o correo"/>
+                                    <input type="text" id="usuario" class="form-control" placeholder="Usuario o correo"/>
                                 </div>
                                 <div class="form-outline mb-5">
                                 <label for="" class="form-label">Contraseña</label>
-                                    <input type="password" id="contraseña" class="form-control" placeholder="Digite su contraseña"/>
-                                </div>
+                                    <input type="password" id="contrasena" class="form-control" placeholder="Digite su contraseña"/>
+                                </div> 
                                 <div class="text-center pt-1 mb-5 pb-1">
-                                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Ingresar</button>
+                                    <input class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit" value="Ingresar">
                                     <a href="#" class="text-muted">Recordar Contraseña?</a>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-center ph-4">
