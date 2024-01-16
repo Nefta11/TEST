@@ -49,7 +49,7 @@
     <header class="gradient-custom-2">
         <nav class="navbar navbar-expand-lg navbar-light bg-light px-4">
             <a class="navbar-brand" href="#">
-                <img src="imagenes/logo.jpg" alt="logo">
+                <img src="imagenes/logo.jpeg" alt="logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

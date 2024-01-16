@@ -18,7 +18,7 @@
                             <div class="col-lg-6">
                                 <div class="card-body p-md-5 mx-md-4">
                                     <div class="text-center">
-                                        <img src="imagenes/logo.jpg" alt="logo" style="width: 186px;">
+                                        <img src="imagenes/logo.jpeg" alt="logo" style="width: 186px;">
                                         <h4 class="mt-3 mb-5 pb-1">Bienvenido al sistema</h4>
                                     </div>
                                     <form action="login.php" method="post">
