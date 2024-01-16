@@ -28,7 +28,7 @@
             header('Location:menu.php');
         }else{
             //En caso de que la contraseña sea incorrecta
-            echo '<script language="javascript">alert("Contraseña Incorrecta"); window.location.="index.php";</script>';
+            echo '<script language="javascript">alert("Contraseña Incorrecta"); window.location="index.php";</script>';
         }
     }else{
         echo '<script language="javascript">alert("Usuario Incorrecta"); windows.location.href="index.php"</script>';
