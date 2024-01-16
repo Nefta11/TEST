@@ -1,3 +1,5 @@
 <?php 
-echo "Conexion de base de datos";
+session_start();
+session_destroy();
+echo ""
 ?>

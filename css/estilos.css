@@ -6,7 +6,7 @@
     background: -webkit-linear-gradient(to right, rgb(199, 154, 204), #524259,#5F4C73,#6C568C);
     
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, #F2E0DF,#524259 , #6C568C, #F2DFEB);
+    background: linear-gradient(to right, #F2E0DF,#a473b9 , #9c71db, #ca93c4);
     }
     @media (min-width: 768px) {
         .gradient-form {
