@@ -24,7 +24,7 @@
             session_regenerate_id();
             $_SESSION['loggedin']=TRUE;
             $_SESSION['name']=$_POST['usuario'];
-            //$_SESSION['id']=$id;
+            $_SESSION['id']=$id;
             header('Location:menu.php');
         }else{
             //En caso de que la contraseña sea incorrecta
