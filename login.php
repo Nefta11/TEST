@@ -18,8 +18,6 @@
     if($stmt->num_rows>0){
         $stmt->bind_result($usuario, $contrasena);
         $stmt->fetch();
-
-        //se confirma que la cuenta existe ahora validamos la contraseña
         if($_POST['contrasena']===$contrasena){
             session_regenerate_id();
             $_SESSION['loggedin']=TRUE;
@@ -27,10 +25,9 @@
             $_SESSION['id']=$id;
             header('Location:menu.php');
         }else{
-            //En caso de que la contraseña sea incorrecta
-            echo '<script language="javascript">alert("Contraseña Incorrecta"); window.location="index.php";</script>';
+            echo '<script language="javascript">alert("Contraseña Incorrecta"); window.location=("index.php")</script>';
         }
     }else{
-        echo '<script language="javascript">alert("Usuario Incorrecta"); windows.location.href="index.php"</script>';
+        echo '<script language="javascript">alert("Usuario Incorrecto"); window.location=("index.php")</script>';
     }$stmt->close();
 ?>
