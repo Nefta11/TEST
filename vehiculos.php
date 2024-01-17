@@ -8,9 +8,10 @@
 </head>
 <body>
 
-    <h1>Registrar Vehículo</h1>
 
     <form class="contenedorform" action="procesar_vehiculo.php" method="post">
+        
+    <h1>Registrar Vehículo</h1>
         <p>Ingresa los datos del vehículo</p>
 
         <div class="form-outline mb-4">
