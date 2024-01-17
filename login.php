@@ -2,7 +2,6 @@
 <?php
     include 'conexion.php';
     session_start();
-
     // Validar si se reciben parametros del metodo POST
     if(!isset($_POST['usuario'],$_POST['contrasena'])){
         header('Location:index.php');
