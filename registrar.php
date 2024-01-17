@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="css/estilos.css">
 <h1>Registrar uso de estacionamiento</h1>
 
-<form action="login.php" method="post">
+<form class="contenedorform" action="login.php" method="post">
     <p>Ingresa los datos de tu cuenta</p>
     <div class="form-outline mb-4">
     <label class="form-label" for="usuario">Vehiculo</label>
