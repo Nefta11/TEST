@@ -10,15 +10,10 @@
 
 
 
-    <form class="contenedorform" action="login.php" method="post">
+    <form class="contenedorform" id="frmclientes" name="frmclientes">
     <h1>Cliente</h1>
         <p>Ingresa los datos del cliente</p>
         
-
-        <div class="form-outline mb-4">
-            <label class="form-label" for="id_cliente">ID_CLIENTE:</label>
-            <input type="text" id="id_cliente" name="id_cliente" placeholder="ID_CLIENTE" required>
-        </div>
 
         <div class="form-outline mb-4">
             <label class="form-label" for="nombre">Nombre:</label>
@@ -40,7 +35,7 @@
             <input type="email" id="correo" name="correo" placeholder="Correo" required>
         </div>
 
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Registrar" onclick="registrarCliente()">
     </form>
 
 </body>

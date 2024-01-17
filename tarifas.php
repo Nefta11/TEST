@@ -28,7 +28,7 @@
 
         <div class="form-outline mb-4">
             <label class="form-label" for="tarifa">Tarifa:</label>
-            <input type="text" id="tarifa" name="tarifa" placeholder="Ingrese la tarifa" required>
+            <input type="number" id="tarifa" name="tarifa" placeholder="Ingrese la tarifa" required>
         </div>
 
         <div class="form-outline mb-4">
