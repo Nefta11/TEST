@@ -37,57 +37,54 @@
             </select>
         </div>
 
-        <!-- Campo de fecha de ingreso -->
+        
         <div class="form-outline mb-4">
             <label class="form-label" for="fecha_ingreso">Fecha de Ingreso</label>
             <input type="date" id="fechaIngreso" name="fechaIngreso" required>
         </div>
 
-        <!-- Campo de hora de ingreso -->
+        
         <div class="form-outline mb-4">
             <label class="form-label" for="hora_ingreso">Hora de Ingreso</label>
             <input type="time" id="horaIngreso" name="horaIngreso" required>
         </div>
 
-        <!-- Campo de fecha de salida -->
+        
         <div class="form-outline mb-4">
             <label class="form-label" for="fecha_salida">Fecha de Salida</label>
             <input type="date" id="fechaSalida" name="fechaSalida" required>
         </div>
 
-        <!-- Campo de hora de salida -->
+        
         <div class="form-outline mb-4">
             <label class="form-label" for="hora_salida">Hora de Salida</label>
             <input type="time" id="horaSalida" name="horaSalida" required>
         </div>
 
-        <!-- Campo de selección para ID_EMPLEADO -->
+       
         <div class="form-outline mb-4">
             <label class="form-label" for="id_empleado">Empleado</label>
             <select name="id_empleado" id="id_empleado" required>
                 <option value="">Selecciona ID_EMPLEADO</option>
-                <!-- Agrega opciones según sea necesario -->
+               
                 <option value="empleado1">Empleado 1</option>
                 <option value="empleado2">Empleado 2</option>
                 <option value="empleado3">Empleado 3</option>
             </select>
         </div>
 
-        <!-- Campo de selección para ID_TARIFA -->
+       
         <div class="form-outline mb-4">
             <label class="form-label" for="id_tarifa">Tarifa</label>
             <select name="id_tarifa" id="id_tarifa" required>
                 <option value="">Selecciona ID_TARIFA</option>
-                <!-- Agrega opciones según sea necesario -->
+        
                 <option value="tarifa1">Tarifa 1</option>
                 <option value="tarifa2">Tarifa 2</option>
                 <option value="tarifa3">Tarifa 3</option>
             </select>
         </div>
 
-        <!-- Agrega más campos según sea necesario -->
-
-        <!-- Botón de envío -->
         <input type="submit" value="Registrar">
     </form>
 
