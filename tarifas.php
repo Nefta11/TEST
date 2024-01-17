@@ -16,7 +16,7 @@
 
 
         <div class="form-outline mb-4">
-            <label class="form-label" for="id_tarifa">ID_TARIFA</label>
+            <label class="form-label" for="id_tarifa">ID_TARIFA:</label>
             <select name="id_tarifa" id="id_tarifa" required>
                 <option value="">Selecciona ID_TARIFA</option>
 
@@ -27,12 +27,12 @@
         </div>
 
         <div class="form-outline mb-4">
-            <label class="form-label" for="tarifa">Tarifa</label>
+            <label class="form-label" for="tarifa">Tarifa:</label>
             <input type="text" id="tarifa" name="tarifa" placeholder="Ingrese la tarifa" required>
         </div>
 
         <div class="form-outline mb-4">
-            <label class="form-label" for="monto">Monto</label>
+            <label class="form-label" for="monto">Monto:</label>
             <input type="text" id="monto" name="monto" placeholder="Ingrese el monto" required>
         </div>
 

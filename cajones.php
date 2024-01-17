@@ -10,11 +10,11 @@
 
 
     <form class="contenedorform" action="login.php" method="post">
-    <h1>Cajon</h1>
+    <h1>Registro del Cajon</h1>
         <p>Ingresa los datos del cajon</p>
         
         <div class="form-outline mb-4">
-            <label class="form-label" for="id_cajon">ID_CAJON</label>
+            <label class="form-label" for="id_cajon">ID_CAJON:</label>
             <select name="id_cajon" id="id_cajon" required>
                 <option value="">Selecciona ID_CAJON</option>
                 
@@ -25,12 +25,12 @@
         </div>
 
         <div class="form-outline mb-4">
-            <label class="form-label" for="numero">Número</label>
+            <label class="form-label" for="numero">Número:</label>
             <input type="text" id="numero" name="numero" required>
         </div>
 
         <div class="form-outline mb-4">
-            <label class="form-label" for="status">Status</label>
+            <label class="form-label" for="status">Status:</label>
             <input type="text" id="status" name="status" required>
         </div>
 

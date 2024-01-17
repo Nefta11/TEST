@@ -8,29 +8,26 @@
 </head>
 <body>
 
-    <h1>Registrar uso de estacionamiento</h1>
+    
 
     <form class="contenedorform" action="procesar_registro.php" method="post">
+    <h1>Registrar uso de estacionamiento</h1>
         <p>Ingresa los datos del estacionamiento</p>
         
-        <!-- Campo de selección para ID_VEHICULO -->
         <div class="form-outline mb-4">
-            <label class="form-label" for="id_vehiculo">Vehiculo</label>
+            <label class="form-label" for="id_vehiculo">Vehiculo:</label>
             <select name="id_vehiculo" id="id_vehiculo" required>
                 <option value="">Selecciona ID_VEHICULO</option>
-                <!-- Agrega opciones según sea necesario -->
                 <option value="vehiculo1">Vehiculo 1</option>
                 <option value="vehiculo2">Vehiculo 2</option>
                 <option value="vehiculo3">Vehiculo 3</option>
             </select>
         </div>
 
-        <!-- Campo de selección para ID_CAJON -->
         <div class="form-outline mb-4">
-            <label class="form-label" for="id_cajon">Cajones</label>
+            <label class="form-label" for="id_cajon">Cajones:</label>
             <select name="id_cajon" id="id_cajon" required>
                 <option value="">Selecciona a un cajon</option>
-                <!-- Agrega opciones según sea necesario -->
                 <option value="cajon1">Cajon 1</option>
                 <option value="cajon2">Cajon 2</option>
                 <option value="cajon3">Cajon 3</option>
@@ -39,31 +36,31 @@
 
         
         <div class="form-outline mb-4">
-            <label class="form-label" for="fecha_ingreso">Fecha de Ingreso</label>
+            <label class="form-label" for="fecha_ingreso">Fecha de Ingreso:</label>
             <input type="date" id="fechaIngreso" name="fechaIngreso" required>
         </div>
 
         
         <div class="form-outline mb-4">
-            <label class="form-label" for="hora_ingreso">Hora de Ingreso</label>
+            <label class="form-label" for="hora_ingreso">Hora de Ingreso:</label>
             <input type="time" id="horaIngreso" name="horaIngreso" required>
         </div>
 
         
         <div class="form-outline mb-4">
-            <label class="form-label" for="fecha_salida">Fecha de Salida</label>
+            <label class="form-label" for="fecha_salida">Fecha de Salida:</label>
             <input type="date" id="fechaSalida" name="fechaSalida" required>
         </div>
 
         
         <div class="form-outline mb-4">
-            <label class="form-label" for="hora_salida">Hora de Salida</label>
+            <label class="form-label" for="hora_salida">Hora de Salida:</label>
             <input type="time" id="horaSalida" name="horaSalida" required>
         </div>
 
        
         <div class="form-outline mb-4">
-            <label class="form-label" for="id_empleado">Empleado</label>
+            <label class="form-label" for="id_empleado">Empleado:</label>
             <select name="id_empleado" id="id_empleado" required>
                 <option value="">Selecciona ID_EMPLEADO</option>
                
@@ -75,7 +72,7 @@
 
        
         <div class="form-outline mb-4">
-            <label class="form-label" for="id_tarifa">Tarifa</label>
+            <label class="form-label" for="id_tarifa">Tarifa:</label>
             <select name="id_tarifa" id="id_tarifa" required>
                 <option value="">Selecciona ID_TARIFA</option>
         
