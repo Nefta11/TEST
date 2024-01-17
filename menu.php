@@ -15,6 +15,8 @@ if (!isset($_SESSION['loggedin'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="YOUR-INTEGRITY-CODE" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="scripts/js/funciones.js"></script>
+    <script src="scripts/js/jquery.min.js"></script>
     <style>
         body {
             margin: 0;
@@ -46,7 +48,7 @@ if (!isset($_SESSION['loggedin'])){
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             padding: 60px;
             height: 100vh;
-            width: 25vw;
+            width: 23vw;
             z-index: 1;
         }
 
@@ -61,7 +63,7 @@ if (!isset($_SESSION['loggedin'])){
         #menu a {
             display: block;
             margin-bottom: 30px;
-            color: #fff; /* Color de texto blanco para contrastar */
+            color:black; /* Color de texto blanco para contrastar */
             text-decoration: none;
             font-size: 26px;
         }
@@ -80,17 +82,22 @@ if (!isset($_SESSION['loggedin'])){
 
     <div id="menu">
         <div id="close-menu-icon" onclick="closeMenu()">&#10005;</div>
-        <a href="#"><i class="fas fa-home"></i> Inicio</a>
-        <a href="#"><i class="fas fa-user-plus"></i> Registro</a>
-        <a href="#"><i class="fas fa-car"></i> Cajones</a>
-        <a href="#"><i class="fas fa-users"></i> Clientes</a>
-        <a href="#"><i class="fas fa-car"></i> Vehículos</a>
-        <a href="#"><i class="fas fa-dollar-sign"></i> Tarifas</a> <!-- Icono de dólar para tarifas -->
-        <a href="#"><i class="fas fa-user-tie"></i> Encargados</a>
-        <a href="#"><i class="fas fa-chart-bar"></i> Reportes</a>
-        <a href="/logout.php"><i class="fas fa-sign-out-alt"></i> Salir</a>
+        <a href="#" onclick="cargarDiv('#contenido','inicio.php');"><i class="fas fa-home"></i> Inicio</a>
+        <a href="#" onclick="cargarDiv('#contenido','registrar.php');"><i class="fas fa-user-plus"></i> Registro</a>
+        <a href="#" onclick="cargarDiv('#contenido','cajones.php');"><i class="fas fa-car"></i> Cajones</a>
+        <a href="#" onclick="cargarDiv('#contenido','clientes.php');"><i class="fas fa-users"></i> Clientes</a>
+        <a href="#" onclick="cargarDiv('#contenido','vehiculos.php');"><i class="fas fa-car"></i> Vehículos</a>
+        <a href="#" onclick="cargarDiv('#contenido','tarifas.php');"><i class="fas fa-dollar-sign"></i> Tarifas</a> <!-- Icono de dólar para tarifas -->
+        <a href="#" onclick="cargarDiv('#contenido','encargados.php');"><i class="fas fa-user-tie"></i> Encargados</a>
+        <a href="#" onclick="cargarDiv('#contenido','reportes.php');"><i class="fas fa-chart-bar"></i> Reportes</a>
+        <a href="logout.php" ><i class="fas fa-sign-out-alt"></i> Salir</a>
     </div>
 
+    <div id="contenido">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At recusandae totam architecto deleniti eveniet quidem, odio ut quas reprehenderit. Sequi odit labore fugit laboriosam alias suscipit atque nihil necessitatibus corporis?</p>
+        <p></p>
+        <p></p>
+    </div>
     <script src="https://kit.fontawesome.com/YOUR-KIT-CODE.js" crossorigin="anonymous"></script>
 
     <script>

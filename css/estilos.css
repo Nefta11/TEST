@@ -19,3 +19,9 @@
         border-bottom-right-radius: .3rem;
         }
     }
+
+    .contenedorform{
+        background-color: #5F4C73;
+        width: 50%;
+        margin: 0 auto;
+    }   

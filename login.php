@@ -1,3 +1,4 @@
+<script src="scripts/js/funciones.js"></script>
 <?php
     include 'conexion.php';
     session_start();
