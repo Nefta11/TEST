@@ -55,3 +55,34 @@ function registrarCliente(){
     });
 }
 
+
+
+function registrarVehiculo(){
+    var matricula=$("#matricula").val();
+    var modelo=$("#modelo").val();
+    var color=$("#color").val();
+    var puertas=$("#puertas").val();
+    var tipo=$("#tipo").val();
+    var tipo=$("#Id_cliente").val();
+
+    alert(matricula+modelo+color+puertas+tipo);
+
+    $.post("registrarvehiculo.php",{
+        "matricula":matricula,
+        "modelo":modelo,
+        "color":color,
+        "puertas":puertas,
+        "tipo":tipo,
+        "Id_cliente":"Id_cliente"
+    },
+        
+        function(respuesta){
+        alert(respuesta);
+        $("#matricula").val("");
+        $("#modelo").val("");
+        $("#color").val("");
+        $("#puertas").val("");
+        $("#tipo").val("");
+        $("#Id_cliente").val("");
+    });
+}

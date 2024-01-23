@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+o<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -9,20 +9,10 @@
 <body>
 
 
-    <form class="contenedorform" action="procesar_vehiculo.php" method="post">
+    <form class="contenedorform" id="frmvehiculo" name="frmvehiculos">
         
     <h1>Registrar Vehículo</h1>
         <p>Ingresa los datos del vehículo</p>
-
-        <div class="form-outline mb-4">
-            <label class="form-label" for="id_vehiculo">ID_VEHICULO:</label>
-            <select name="id_vehiculo" id="id_vehiculo" required>
-                <option value="">Selecciona ID_VEHICULO</option>
-                <option value="vehiculo1">Vehiculo 1</option>
-                <option value="vehiculo2">Vehiculo 2</option>
-                <option value="vehiculo3">Vehiculo 3</option>
-            </select>
-        </div>
 
         <div class="form-outline mb-4">
             <label class="form-label" for="matricula">Matrícula:</label>
@@ -51,17 +41,24 @@
         </div>
 
         <div class="form-outline mb-4">
-            <label class="form-label" for="id_cliente">Cliente:</label>
-            <select name="id_cliente" id="id_cliente" required>
+            <label class="form-label" for="Id_cliente">Cliente:</label>
+            <select name="Id_cliente" id="Id_cliente" required>
                 <option value="">Selecciona ID_CLIENTE</option>
 
-                <option value="cliente1">Cliente 1</option>
-                <option value="cliente2">Cliente 2</option>
-                <option value="cliente3">Cliente 3</option>
+                <?php
+                    include 'conexion.php';
+                    $query="SELECT Id_cliente,nombre FROM cliente";
+                    $ejecutar=$conexion->query($query);
+                    while($result=$ejecutar->fetch_array()){
+                    echo "<option value='".$result['Id_cliente']."'>".$result
+                    ['nombre']."</option>";
+                    }
+                ?>
+
             </select>
         </div>
 
-        <input type="submit" value="Registrar">
+        <input type="button" value="Registrar" onclick="registrarVehiculo();">
     </form>
 
 </body>
