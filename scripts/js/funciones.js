@@ -32,37 +32,26 @@ function salir(){
     });
 }
 
-function registrarCliente() {
-    // Obtener los valores del formulario
-    var nombre = $("#nombre").val();
-    var direccion = $("#direccion").val();
-    var telefono = $("#telefono").val();
-    var correo = $("#correo").val();
+function registrarCliente(){
+    var nombre=$("#nombre").val();
+    var direccion=$("#direccion").val();
+    var telefono=$("#telefono").val();
+    var correo=$("#correo").val();
 
-    // Validar que los campos no estén vacíos
-    if (nombre === '' || direccion === '' || telefono === '' || correo === '') {
-        alert("Por favor, completa todos los campos.");
-        return;
-    }
+    alert(nombre+direccion+telefono+correo);
 
-    // Enviar los datos al archivo PHP usando una petición POST
-    $.post("registrarcliente.php", {
-        "nombre": nombre,
-        "direccion": direccion,
-        "telefono": telefono,
-        "correo": correo
-    }, function (respuesta) {
-        // Mostrar la respuesta del servidor
+    $.post("registrarcliente.php",{
+        "nombre":nombre,
+        "direccion":direccion,
+        "telefono":telefono,
+        "correo":correo},
+        
+        function(respuesta){
         alert(respuesta);
-
-        // Limpiar los campos del formulario después de enviar los datos
         $("#nombre").val("");
         $("#direccion").val("");
         $("#telefono").val("");
         $("#correo").val("");
-    }).fail(function () {
-        alert("Error al enviar los datos al servidor.");
     });
 }
-
 

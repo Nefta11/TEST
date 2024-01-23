@@ -35,7 +35,7 @@
             <input type="email" id="correo" name="correo" placeholder="Correo" required>
         </div>
 
-        <input type="submit" value="Registrar" onclick="registrarCliente();">
+        <input type="button" value="Registrar" onclick="registrarCliente();">
     </form>
 
 </body>

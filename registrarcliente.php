@@ -1,13 +1,22 @@
 <?php
 include 'conexion.php';
-$nombre=$_POST['nombre'];
-$direccion=$_POST['direccion'];
-$telefono=$_POST['telefono'];
-$correo=$_POST['correo'];
 
-echo $nombre.$direccion.$telefono.$correo;
+$nombre = $_POST['nombre'];
+$direccion = $_POST['direccion'];
+$telefono = $_POST['telefono'];
+$correo = $_POST['correo'];
 
-$con="INSERT INTO cliente (nombre,direccion,telefono,correo)VALUES('".$nombre."','".$direccion"','".$telefono"','".$correo."')";
+$stmt = $conexion->prepare("INSERT INTO cliente (nombre, direccion, telefono, correo) VALUES (?, ?, ?, ?)");
+$stmt->bind_param("ssss", $nombre, $direccion, $telefono, $correo);
 
+$result = $stmt->execute();
 
+if ($result) {
+    echo "success";
+} else {
+    echo "error";
+}
+
+$stmt->close();
+$conexion->close();
 ?>
