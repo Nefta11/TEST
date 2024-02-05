@@ -1,115 +1,173 @@
 <?php
-session_start();
-if (!isset($_SESSION['loggedin'])){
-    echo '<script language="javascript">alert("Tienes que acceder con tu usuario y contraseña");location.href ="index.php";</script>';
-    echo '<a href="/logout.php">Cerrar sesión</a>';
-    header('Location: index.php');
-    exit; 
-}
+    session_start();
+    $idusuario=$_SESSION['id'];
+    $correo=$_SESSION['loggedin'];
+    if(!isset($_SESSION['loggedin'])){
+        echo '<script language="javascript">alert("Tienes que acceder con usuario y contraseña"); location.href="index.php"</script>';
+    }
 ?>
-
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="YOUR-INTEGRITY-CODE" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./scripts/js/sweetalert.min.js"></script>
     <script src="scripts/js/funciones.js"></script>
     <script src="scripts/js/jquery.min.js"></script>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #F2E0DF, #a473b9, #9c71db, #ca93c4);
-        }
-
-        #header {
-            background-color: #333;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-
-        #menu-icon {
-            font-size: 32px;
-            cursor: pointer;
-            position: fixed;
-            top: 15px;
-            left: 15px;
-        }
-
-        #menu {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: linear-gradient(to right, #F2E0DF, #a473b9, #9c71db, #ca93c4);
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            padding: 60px;
-            height: 100vh;
-            width: 23vw;
-            z-index: 1;
-        }
-
-        #close-menu-icon {
-            font-size: 24px;
-            cursor: pointer;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-
-        #menu a {
-            display: block;
-            margin-bottom: 30px;
-            color:black; /* Color de texto blanco para contrastar */
-            text-decoration: none;
-            font-size: 26px;
-        }
-
-        #menu a i {
-            margin-right: 20px;
-        }
-    </style>
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"rel="stylesheet">
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
 </head>
-<body>
-    <div id="header">
-        <h1>Panel de Información</h1>
+
+<body id="page-top">
+
+    <!--Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Icono-->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="inicio.php">
+    <div class="sidebar-brand-icon rotate-n-15">
     </div>
+    <div class="sidebar-brand-text mx-3">Parking<sup>Neft</sup></div>
+</a>
 
-    <div id="menu-icon">&#9776;</div>
 
-    <div id="menu">
-        <div id="close-menu-icon" onclick="closeMenu()">&#10005;</div>
-        <a href="#" onclick="cargarDiv('#contenido','inicio.php');"><i class="fas fa-home"></i> Inicio</a>
-        <a href="#" onclick="cargarDiv('#contenido','registrar.php');"><i class="fas fa-user-plus"></i> Registro</a>
-        <a href="#" onclick="cargarDiv('#contenido','cajones.php');"><i class="fas fa-car"></i> Cajones</a>
-        <a href="#" onclick="cargarDiv('#contenido','clientes.php');"><i class="fas fa-users"></i> Clientes</a>
-        <a href="#" onclick="cargarDiv('#contenido','vehiculos.php');"><i class="fas fa-car"></i> Vehículos</a>
-        <a href="#" onclick="cargarDiv('#contenido','tarifas.php');"><i class="fas fa-dollar-sign"></i> Tarifas</a> <!-- Icono de dólar para tarifas -->
-        <a href="#" onclick="cargarDiv('#contenido','encargados.php');"><i class="fas fa-user-tie"></i> Encargados</a>
-        <a href="#" onclick="cargarDiv('#contenido','reportes.php');"><i class="fas fa-chart-bar"></i> Reportes</a>
-        <a href="logout.php" ><i class="fas fa-sign-out-alt"></i> Salir</a>
-    </div>
+            <!-- Divider -->
+            <hr class="sidebar-divider my-1">
 
-    <div id="contenido">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. At recusandae totam architecto deleniti eveniet quidem, odio ut quas reprehenderit. Sequi odit labore fugit laboriosam alias suscipit atque nihil necessitatibus corporis?</p>
-        <p></p>
-        <p></p>
-    </div>
-    <script src="https://kit.fontawesome.com/YOUR-KIT-CODE.js" crossorigin="anonymous"></script>
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Inicio
+            </div>
 
-    <script>
-        document.getElementById("menu-icon").addEventListener("click", function() {
-            var menu = document.getElementById("menu");
-            menu.style.display = (menu.style.display === "block") ? "none" : "block";
-        });
+            <li class="nav-item">
+                <a class="nav-link active" onclick="cargarDiv('#contenido','registro.php');" aria-current="page"
+                    href="#">
+                    <i class="fas fa-address-card fa-sm fa-fw mr-2 text-gray-400"></i>
+                    <span>Registro</span>
+                </a>
+            </li>
 
-        function closeMenu() {
-            var menu = document.getElementById("menu");
-            menu.style.display = "none";
-        }
-    </script>
+            <li class="nav-item">
+                <a class="nav-link active" onclick="cargarDiv('#contenido','cajon.php');" aria-current="page" href="#">
+                    <i class="fas fa-splotch fa-sm fa-fw mr-2 text-gray-400"></i>
+                    <span>Cajones</span>
+                </a>
+
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link active" onclick="cargarDiv('#contenido','cliente.php');" aria-current="page"
+                    href="#">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    <span>Clientes</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link active" onclick="cargarDiv('#contenido','vehiculos.php');" aria-current="page"
+                    href="#">
+                    <i class="fas fa-car fa-sm fa-fw mr-2 text-gray-400"></i>
+                    <span>Vehiculos</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link active" onclick="cargarDiv('#contenido','tarifas.php');" aria-current="page"
+                    href="#">
+                    <i class="fas fa-coins fa-sm fa-fw mr-2 text-gray-400"></i>
+                    <span>Tarifas</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" onclick="cargarDiv('#contenido','empleados.php');" aria-current="page"
+                    href="#">
+                    <i class="fas fa-briefcase fa-sm fa-fw mr-2 text-gray-400"></i>
+                    <span>Encargados</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-1">
+
+
+            <li class="nav-item">
+                <a class="nav-link active" onclick="cargarDiv('#contenido','reportes.php');" aria-current="page"
+                    href="#">
+                    <i class="fas fa-book fa-sm fa-fw mr-2 text-gray-400"></i>
+                    <span>Reportes</span></a>
+            </li>
+
+            <hr class="sidebar-divider my-1">
+
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0);" onclick="closeSession()">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    <span>Salir</span></a>
+                </li>
+
+
+            <hr class="sidebar-divider d-none d-md-block">
+        </ul>
+
+        <div id="content-wrapper" class="d-flex flex-column">
+
+          
+            <div id="content">
+
+             
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                   
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                  
+                    <ul class="navbar-nav ml-auto">
+
+                      
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            </a>
+
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Neftali Arturo Hernández Vergara</span>
+                                <i class="fas fa-laugh-wink "></i>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <div class="container-fluid" id="contenido">
+                    
+            </div>
+
+
+                
+                <script src="vendor/jquery/jquery.min.js"></script>
+                <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+              
+                <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+                
+                <script src="js/sb-admin-2.min.js"></script>
+
 </body>
+<div class="p-2 w-100 bd-highlight" id="contenido">
+            <?php
+                include 'inicio.php'
+            ?>
+        </div>
 </html>

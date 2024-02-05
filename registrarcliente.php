@@ -1,22 +1,15 @@
 <?php
 include 'conexion.php';
+$nombre=$_POST['nombre'];
+$direccion=$_POST['direccion'];
+$numero=$_POST['numero'];
+$correo=$_POST['correo'];
 
-$nombre = $_POST['nombre'];
-$direccion = $_POST['direccion'];
-$telefono = $_POST['telefono'];
-$correo = $_POST['correo'];
+$con="INSERT INTO cliente (nombre,direccion,telefono,correo) VALUES ('".$nombre."','".$direccion."','".$numero."','".$correo."')";
 
-$stmt = $conexion->prepare("INSERT INTO cliente (nombre, direccion, telefono, correo) VALUES (?, ?, ?, ?)");
-$stmt->bind_param("ssss", $nombre, $direccion, $telefono, $correo);
-
-$result = $stmt->execute();
-
-if ($result) {
-    echo "success";
+if($datos=mysqli_query($conexion,$con)){
+    echo "Datos guardados correctamente";
 } else {
-    echo "error";
+    echo "Error, no se guardo correctamente";
 }
-
-$stmt->close();
-$conexion->close();
 ?>
