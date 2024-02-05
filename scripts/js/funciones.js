@@ -1,25 +1,3 @@
-function msgError(){
-    Swal.fire({
-        icon: "error",
-        title: "Usuario incorrecto",
-        showConfirmButton: false,
-        timer: 2000
-    }).then(function () {
-        window.location = "index.php";
-    });
-}
-
-function msjPasswordError(){
-    Swal.fire({
-        icon: "error", 
-        title: "Contraseña Incorrecta",
-        showConfirmButton: false,
-        timer: 2000
-    }).then(function (){
-        window.location = "index.php";
-    });
-}
-
 
 function closeSession(){
     Swal.fire({

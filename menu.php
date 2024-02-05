@@ -149,9 +149,11 @@
                     </ul>
 
                 </nav>
-                <div class="container-fluid" id="contenido">
-                    
-            </div>
+                <div class="p-2 w-100 bd-highlight" id="contenido">
+            <?php
+                include 'inicio.php'
+            ?>
+        </div>
 
 
                 
@@ -165,9 +167,4 @@
                 <script src="js/sb-admin-2.min.js"></script>
 
 </body>
-<div class="p-2 w-100 bd-highlight" id="contenido">
-            <?php
-                include 'inicio.php'
-            ?>
-        </div>
 </html>
