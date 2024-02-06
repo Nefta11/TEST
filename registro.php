@@ -67,38 +67,57 @@
     </form>
     <hr class="sidebar-divider my-4">
 <div class="table-responsive">
-    <table class="table">
-        <thead class="table-dark">
-            <tr>
-                <th scope="col">ID Vehículo</th>
-                <th scope="col">ID Cajón</th>
-                <th scope="col">ID Tarifa</th>
-                <th scope="col">Fecha Ingreso</th>
-                <th scope="col">Hora Ingreso</th>
-                <th scope="col">Editar</th>
-                <th scope="col">Eliminar</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-                include 'conexion.php';
-                $query = "SELECT id_registro ,id_vehiculo, id_cajon, id_tarifa, fechaingreso, horaingreso FROM registro";
-                $ejecutar = $conexion->query($query);
+<table class="table">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">ID Vehículo</th>
+            <th scope="col">ID Cajón</th>
+            <th scope="col">ID Empleado</th>
+            <th scope="col">ID Tarifa</th>
+            <th scope="col">Fecha Ingreso</th>
+            <th scope="col">Hora Ingreso</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        include 'conexion.php';
+        $query = "SELECT id_registro, id_vehiculo, id_cajon, id_empleado, id_tarifa, fechaingreso, horaingreso FROM registro";
+        $ejecutar = $conexion->query($query);
 
-                while($result = $ejecutar->fetch_array()){
-                    echo "<tr>
-                        <td>".$result['id_vehiculo']."</td>
-                        <td>".$result['id_cajon']."</td>
-                        <td>".$result['id_tarifa']."</td>
-                        <td>".$result['fechaingreso']."</td>
-                        <td>".$result['horaingreso']."</td>
-                        <td><a href='#' onclick='editarRegistro(".$result['id_registro'].");'>Editar</a></td>
-                        <td><a href='#' onclick='eliminarRegistro(".$result['id_registro'].");'>Eliminar</a></td>
-                    </tr>";
-                }
-            ?>
-        </tbody>
-    </table>
+        while($result = $ejecutar->fetch_array()) {
+            // Consulta para obtener información asociada al ID Vehículo
+            $query_vehiculo = "SELECT matricula FROM vehiculo WHERE id_vehiculo = " . $result['id_vehiculo'];
+            $result_vehiculo = $conexion->query($query_vehiculo)->fetch_assoc();
+
+            // Consulta para obtener información asociada al ID Cajón
+            $query_cajon = "SELECT numero FROM cajon WHERE id_cajon = " . $result['id_cajon'];
+            $result_cajon = $conexion->query($query_cajon)->fetch_assoc();
+
+            // Consulta para obtener información asociada al ID Empleado
+            $query_empleado = "SELECT nombre FROM empleados WHERE id_empleado = " . $result['id_empleado'];
+            $result_empleado = $conexion->query($query_empleado)->fetch_assoc();
+
+            // Consulta para obtener información asociada al ID Tarifa
+            $query_tarifa = "SELECT monto FROM tarifa WHERE id_tarifa = " . $result['id_tarifa'];
+            $result_tarifa = $conexion->query($query_tarifa)->fetch_assoc();
+
+            echo "<tr>
+                <td>".$result_vehiculo['matricula']."</td>
+                <td>".$result_cajon['numero']."</td>
+                <td>".$result_empleado['nombre']."</td>
+                <td>".$result_tarifa['monto']."</td>
+                <td>".$result['fechaingreso']."</td>
+                <td>".$result['horaingreso']."</td>
+                <td><a href='#' onclick='editarRegistro(".$result['id_registro'].");'>Editar</a></td>
+                <td><a href='#' onclick='eliminarRegistro(".$result['id_registro'].");'>Eliminar</a></td>
+            </tr>";
+        }
+        ?>
+    </tbody>
+</table>
+
 </div>
 
 </div>
