@@ -14,11 +14,11 @@
             <div class="form-group col-md-6">
                 <label for="inputAddress">Estatus</label>
                 <select class="form-control" id="estatus" name="estatus">
-                    <option>Disponible</option>
-                    <option>Ocupado</option>
-                    <option>Inhabilitado</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
                 </select>
-            </div>
+        </div>
+
         </div>
         
         <input type="button" class="btn btn-primary" onclick="registrarCajon();" value="Entrar"></input>
