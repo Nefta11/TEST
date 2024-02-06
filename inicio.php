@@ -22,20 +22,20 @@ while($result = $ejecutar->fetch_array()){
         vehiculo.id_vehiculo = registro.id_vehiculo INNER JOIN cajon ON 
         cajon.id_cajon = registro.id_cajon INNER JOIN tarifa ON 
         tarifa.id_tarifa = registro.id_tarifa INNER JOIN empleados ON
-         empleados.id_empleado = registro.id_empleado WHERE registro.id_cajon = ".$result['id_cajon']."";
-         $ejecutar2 = $conexion->query($query2);
+        empleados.id_empleado = registro.id_empleado WHERE registro.id_cajon = ".$result['id_cajon']."";
+        $ejecutar2 = $conexion->query($query2);
 
-         if (!$ejecutar2) {
+        if (!$ejecutar2) {
             die("Error en la consulta de registro: " . mysqli_error($conexion));
-         }
+        }
 
-         while($result2 = $ejecutar2->fetch_array()){
+        while($result2 = $ejecutar2->fetch_array()){
             echo "<h4>Matricula:".$result2['matricula']."</h4>";
             echo "<p>".$result2['fechaingreso']." ".$result2['horaingreso']."</p>";
             echo "<p>".$result2['tarifa']."</p>";
             echo "<p>".$result2['nombre']."</p>";
             echo "<a href='#' class='btn btn-warning' onclick='abrirModal(".$result['id_cajon'].")' >Salir</a>";
-         }
+        }
     }
     else{
         echo "<p class='card-text'>No existe un vehiculo ocupando este cajon</p>";
