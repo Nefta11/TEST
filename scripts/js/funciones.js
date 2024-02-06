@@ -1,4 +1,3 @@
-
 function closeSession(){
     Swal.fire({
         title: "Quieres salir del sistema",
@@ -102,6 +101,30 @@ function registrarTarifa(){
     });
 
 }
+
+function registrarRegistro() {
+    var idVehiculo = $("#id_vehiculo").val();
+    var idCajon = $("#id_cajon").val();
+    var idTarifa = $("#id_tarifa").val();
+    var idEmpleado = $("#id_empleado").val();
+
+    $.post("registrarRegistro.php", {
+        "id_vehiculo": id_vehiculo,
+        "id_cajon": id_cajon,
+        "id_tarifa": id_tarifa,
+        "id_empleado": id_empleado
+    }, function(respuesta) {
+        alert(respuesta);
+        // Puedes realizar acciones adicionales después de registrar el registro, si es necesario
+        // Limpiar los campos o redirigir a otra página, por ejemplo
+        $("#id_vehiculo").val("");
+        $("#id_cajon").val("");
+        $("#id_tarifa").val("");
+        $("#id_empleado").val("");
+    });
+}
+
+
 
 function eliminarCajon(idcajon){
     $.post("eliminarCajon.php",{

@@ -16,9 +16,12 @@ while ($result = $ejecutar->fetch_array()) {
         '" . $result['id_cajon'] . "'";
         $ejecutar2 = $conexion->query($query2);
         while ($result2 = $ejecutar2->fetch_array()) {
-            // Aquí va el código para el bucle interno
-            // Puedes acceder a los datos usando $result2['nombre_del_campo']
-        }
+            echo "<h4>Matricula:".$result2['matricula']."</h4>";
+            echo "<p>".$result2['fechaIngreso']." ".$result2['horaIngreso']."</p>";
+            echo "<p>".$result2['tarifa']."</p>";
+            echo "<p>".$result2['nombre']."</p>";
+            echo "<a href='#' class='btn btn-warning' onclick='abrirModal(".$result['Id_cajon'].")' >Salir</a>";
+         }
     } else {
         echo "<p class='card-text'>No existe un vehiculo ocupando este cajón</p>";
         echo "<a href='#' class='btn btn-info' onclick='abrirModal(" . $result['Id_cajon'] . ")'>Ocupar</a>";

@@ -43,7 +43,7 @@
             </div>
         </div>
         
-        <input type="button" class="btn btn-primary" onclick="registrarVehiculo()" value="Entrar"></input>
+        <input type="button" class="btn btn-primary" onclick="registrarVehiculo()" value="Registrar"></input>
     </form>
     <hr class="sidebar-divider my-4">
     <div class="table-responsive">

@@ -1,22 +1,20 @@
 <?php
-include 'conexion.php';
+    include 'conexion.php';
 
-$idVehiculo = $_POST['id_vehiculo'];
-$idCajon = $_POST['id_cajon'];
-$idTarifa = $_POST['id_tarifa'];
-$idEncargado = $_POST['id_empleado'];
+    $Id_vehiculo=$_POST['id_vehiculo'];
+    $Id_cajon=$_POST['id_cajon'];
+    $Id_tarifa=$_POST['id_tarifa'];
+    $Id_empleado=$_POST['id_empleado'];
+    date_default_timezone_set("America/Mexico_City");
+    $fechaingreso=date("y-m-d");
+    $horaingreso=date("H:i:s");
 
-// Obtener la fecha y hora actual
-$fechaIngreso = date("Y-m-d");
-$horaIngreso = date("H:i:s");
-
-// Consulta para insertar el registro
-$query = "INSERT INTO registro (id_vehiculo, id_cajon, id_tarifa, id_empleado, fechaIngreso, horaIngreso) 
-          VALUES ('$idVehiculo', '$idCajon', '$idTarifa', '$idEncargado', '$fechaIngreso', '$horaIngreso')";
-
-if ($datos = mysqli_query($conexion, $query)) {
-    echo "Datos guardados correctamente";
-} else {
-    echo "Error, no se guardó correctamente";
-}
+    $con="INSERT INTO registro(id_vehiculo, id_cajon, id_empleado, id_tarifa, fechaingreso, horaingreso) 
+    VALUE('".$id_vehiculo."','".$id_cajon."','".$id_empleado."','".$id_tarifa."','".$fechaingreso."','".$horaingreso."')";
+    
+    if($datos=mysqli_query($conexion, $con)){
+        echo "Datos guardados correctamente";
+    }else{
+        echo "Error no se guardo correctamente";
+    }
 ?>

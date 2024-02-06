@@ -62,29 +62,43 @@
                 </select>
             </div>
         </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputAddress">Fecha de Ingreso</label>
-                <input type="date" class="form-control" id="fechaIngreso">
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="inputAddress">Hora de Ingreso</label>
-                <input type="time" class="form-control" id="fechaIngreso">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputAddress">Fecha de Salida</label>
-                <input type="date" class="form-control" id="fechaIngreso">
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="inputAddress">Hora de Salida</label>
-                <input type="time" class="form-control" id="fechaIngreso">
-            </div>
-        </div>
         
-        <button type="submit" class="btn btn-primary">Registrar</button>
+        <input type="button" class="btn btn-primary" onclick="registrarRegistro()" value="Registrar"></input>
     </form>
+    <hr class="sidebar-divider my-4">
+<div class="table-responsive">
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">ID Vehículo</th>
+                <th scope="col">ID Cajón</th>
+                <th scope="col">ID Tarifa</th>
+                <th scope="col">Fecha Ingreso</th>
+                <th scope="col">Hora Ingreso</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                include 'conexion.php';
+                $query = "SELECT id_registro ,id_vehiculo, id_cajon, id_tarifa, fechaingreso, horaingreso FROM registro";
+                $ejecutar = $conexion->query($query);
+
+                while($result = $ejecutar->fetch_array()){
+                    echo "<tr>
+                        <td>".$result['id_vehiculo']."</td>
+                        <td>".$result['id_cajon']."</td>
+                        <td>".$result['id_tarifa']."</td>
+                        <td>".$result['fechaingreso']."</td>
+                        <td>".$result['horaingreso']."</td>
+                        <td><a href='#' onclick='editarRegistro(".$result['id_registro'].");'>Editar</a></td>
+                        <td><a href='#' onclick='eliminarRegistro(".$result['id_registro'].");'>Eliminar</a></td>
+                    </tr>";
+                }
+            ?>
+        </tbody>
+    </table>
+</div>
+
 </div>
