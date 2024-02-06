@@ -107,12 +107,16 @@ function registrarRegistro() {
     var idCajon = $("#id_cajon").val();
     var idTarifa = $("#id_tarifa").val();
     var idEmpleado = $("#id_empleado").val();
+    var fechaingreso = $("#fechaingreso").val();
+    var horaingreso = $("#horaingreso").val();
 
     $.post("registrarRegistro.php", {
         "id_vehiculo": id_vehiculo,
         "id_cajon": id_cajon,
         "id_tarifa": id_tarifa,
-        "id_empleado": id_empleado
+        "id_empleado": id_empleado,
+        "fechaingreso": fechaingreso,
+        "horaingreso": horaingreso
     }, function(respuesta) {
         alert(respuesta);
         // Puedes realizar acciones adicionales después de registrar el registro, si es necesario
@@ -121,6 +125,8 @@ function registrarRegistro() {
         $("#id_cajon").val("");
         $("#id_tarifa").val("");
         $("#id_empleado").val("");
+        $("#fechaingreso").val("");
+        $("#horaingreso").val("");
     });
 }
 
