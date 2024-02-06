@@ -102,7 +102,7 @@ function registrarTarifa(){
 
 }
 
-function registrarRegistro() {
+function registrarelRegistro() {
     var idVehiculo = $("#id_vehiculo").val();
     var idCajon = $("#id_cajon").val();
     var idTarifa = $("#id_tarifa").val();
@@ -114,9 +114,7 @@ function registrarRegistro() {
         "id_vehiculo": id_vehiculo,
         "id_cajon": id_cajon,
         "id_tarifa": id_tarifa,
-        "id_empleado": id_empleado,
-        "fechaingreso": fechaingreso,
-        "horaingreso": horaingreso
+        "id_empleado": id_empleado
     }, function(respuesta) {
         alert(respuesta);
         // Puedes realizar acciones adicionales después de registrar el registro, si es necesario
@@ -125,12 +123,18 @@ function registrarRegistro() {
         $("#id_cajon").val("");
         $("#id_tarifa").val("");
         $("#id_empleado").val("");
-        $("#fechaingreso").val("");
-        $("#horaingreso").val("");
     });
 }
 
-
+function eliminarRegistro(idregistro){
+    $.post("eliminarRegistro.php",{
+        "id_registro":idregistro
+    },
+        function(result){
+            alert(result);
+        }
+    );
+}
 
 function eliminarCajon(idcajon){
     $.post("eliminarCajon.php",{
