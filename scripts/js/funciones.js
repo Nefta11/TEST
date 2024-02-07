@@ -22,6 +22,19 @@ function cargarDiv(div,url){
     $(div).load(url);
 }
 
+function registrarServo(){
+    var descripcion=$("#descripcion").val();
+    var grados=$("#grados").val();
+    var status=$("#status").val();
+    
+    $.post("registrarServoM.php",{"descripcion":descripcion,"grados":grados,"status":status}, function(respuesta){
+        alert(respuesta);
+        $("#descripcion").val("");
+        $("#grados").val("");
+        $("#status").val("");
+    });  
+}
+
 function registrarCliente(){
     var nombre=$("#nombre").val();
     var correo=$("#correo").val();
@@ -123,6 +136,16 @@ function guardarRegistro(){
     });
 }
 
+function eliminarServo(idservo){
+    $.post("eliminarServo.php",{
+        "id_servo":idservo
+    },
+        function(result){
+            alert(result);
+        }
+    );
+}
+
 function eliminarRegistro(idregistro){
     $.post("eliminarRegistro.php",{
         "id_registro":idregistro
@@ -221,6 +244,30 @@ function editarVehiculo(idVehiculo) {
         "id_vehiculo": idVehiculo
     }, function (respuesta) {
         contenido.innerHTML = respuesta;
+    });
+}
+
+function editarServo(idservo) {
+    $.post("actualizarservo.php", {
+        "id_servo": idservo
+    }, function (respuesta) {
+        contenido.innerHTML = respuesta;
+    });
+}
+
+function actualizarServo(id_servo){
+    var descripcion = $("#descripcion").val();
+    var grados = $("#grados").val();
+    var status = $("#status").val();
+
+    $.post("updateServo.php", {
+        "id_servo": id_servo,
+        "descripcion": descripcion,
+        "grados": grados,
+        "status": status
+    }, function (result) {
+        alert(result);
+        cargarDiv($("#contenido"), 'inicio.php');
     });
 }
 

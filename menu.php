@@ -106,6 +106,16 @@
 
             <hr class="sidebar-divider my-1">
 
+
+            <li class="nav-item">
+                <a class="nav-link active" onclick="cargarDiv('#contenido','servoMotor.php');" aria-current="page"
+                    href="#">
+                    <i class="fas fa-book fa-sm fa-fw mr-2 text-gray-400"></i>
+                    <span>Servo-Motor</span></a>
+                    </li>
+
+            <hr class="sidebar-divider my-1">
+
             <li class="nav-item">
                 <a class="nav-link" href="javascript:void(0);" onclick="closeSession()">
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
