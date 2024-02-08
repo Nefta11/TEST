@@ -45,3 +45,76 @@ while($result = $ejecutar->fetch_array()){
 }
 
 ?>
+
+
+<div class="modal" id="modalPromociones">
+    <div class="modal-dialog">
+        <div class="modal-content">
+    <!-- Modal header -->
+        <div class=""modal-header>
+            <h4 class="modal-title">Registrar uso de estacionamiento</h4>
+            <button type="button" class="close" data-dismiss="modal" 
+            onclick="cerrarModal();">x</button>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+        <form>
+        <div class="form-row">
+        <div class="form-group col-md-3">
+                <label for="id_vehiculo">ID Vehiculo</label>
+                <select class="form-control" id="id_vehiculo" name="id_vehiculo">
+                    <option>Seleccione una opcion</option>
+                    <?php 
+                    include 'conexion.php';
+                    $query="SELECT id_vehiculo, matricula FROM vehiculo";
+                    $ejecutar=$conexion->query($query);
+                    while($result=$ejecutar->fetch_array()){
+                        echo"<option value='".$result['id_vehiculo']."'>".$result['matricula']."</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+            <label class="form-label" for="cajon">ID Cajon</label>
+            <input type="text" name="id_cajon" id="id_cajon" value="" class="form-control" readonly="readonly">
+            </div>
+
+            <div class="form-group col-md-4">
+            <label for="id_cajon">ID Empleado</label>
+            <select class="form-control" id="id_empleado" name="id_empleado">
+                    <option>Seleccione una opcion</option>
+                    <?php 
+                    include 'conexion.php';
+                    $query="SELECT id_empleado, nombre FROM empleados";
+                    $ejecutar=$conexion->query($query);
+                    while($result=$ejecutar->fetch_array()){
+                        echo"<option value='".$result['id_empleado']."'>".$result['nombre']."</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+            <div class="form-group col-md-3">
+            <label for="id_cajon">ID Tarifa</label>
+                <select class="form-control" id="id_tarifa" name="id_tarifa">
+                    <option>Seleccione una opcion</option>
+                    <?php 
+                    include 'conexion.php';
+                    $query="SELECT id_tarifa, monto FROM tarifa";
+                    $ejecutar=$conexion->query($query);
+                    while($result=$ejecutar->fetch_array()){
+                        echo"<option value='".$result['id_tarifa']."'>".$result['monto']."</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+        </div>
+        
+        <input type="button" class="btn btn-primary" onclick=" guardarRegistro()" value="Registrar"></input>
+    </form>
+        </div>
+
+        </div>
+
+    </div>
+
+</div>

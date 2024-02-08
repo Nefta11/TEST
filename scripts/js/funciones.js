@@ -350,4 +350,12 @@ function actualizarEmpleado(idEmpleado) {
 }
 
 
+function abrirModal(idcajon){
+    $("#modalPromociones").modal("show");
+    $("#id_cajon").val(idcajon);
+}
+
+function cerrarModal(){
+    $("modalPromociones").modal('hide')
+}
 
