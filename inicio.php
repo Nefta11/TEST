@@ -109,7 +109,7 @@ while($result = $ejecutar->fetch_array()){
             </div>
         </div>
         
-        <input type="button" class="btn btn-primary" onclick=" guardarRegistro()" value="Registrar"></input>
+        <input type="button" class="btn btn-primary" onclick="guardarRegistro()" value="Registrar"></input>
     </form>
         </div>
 
