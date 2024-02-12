@@ -114,25 +114,70 @@ function registrarTarifa(){
     });
 
 }
+function actualizarRegistro(id_registro) {
+    $.post('actualizarRegistro.php', {
+        "id_registro": id_registro
+    }, function (respuesta) {
+        contenido.innerHTML = respuesta
+    })
+}
 
-function guardarRegistro(){
-    var idVehiculo = $("#id_vehiculo").val();
-    var idCajon = $("#id_cajon").val();
-    var idTarifa = $("#id_tarifa").val();
-    var idEmpleado = $("#id_empleado").val();
+function modificarRegistro(id_registro) {
+
+    var id_vehiculo = $("#id_vehiculo").val();
+    var id_cajon = $("#id_cajon").val();
+    var id_tarifa = $("#id_tarifa").val();
 
 
-    $.post("registrarRegistro.php", {
+    $.post("modificarRegistro.php", {
+        "id_registro": id_registro,
         "id_vehiculo": id_vehiculo,
         "id_cajon": id_cajon,
         "id_tarifa": id_tarifa,
-        "id_empleado": id_empleado
-    }, function(respuesta) {
-        alert(respuesta);
+
+    }, function (result) {
+        if (result.trim() === "success") {
+            alert('Actualizado correctamente');
+        }
+        else {
+            alert("Error al editar");
+        }
+        loadDiv($("#contenido"), 'registros.php')
+    });
+}
+
+
+function registrarRegistro() {
+
+    var id_vehiculo = $("#id_vehiculo").val();
+    var id_cajon = $("#id_cajon").val();
+    var id_tarifa = $("#id_tarifa").val();
+
+
+    $.post("registrarRegistro.php", {
+
+        "id_vehiculo": id_vehiculo,
+        "id_cajon": id_cajon,
+        "id_tarifa": id_tarifa,
+
+    }, function (respuesta) {
+        // Display an alert message based on the response from the server
+        if (respuesta.trim() === "success") {
+            Swal.fire({
+                icon: "success",
+                title: "Registro exitoso",
+                showConfirmButton: false,
+                timer: 1500
+            })
+        } else {
+            alert("Error al registrar");
+        }
+
+
         $("#id_vehiculo").val("");
         $("#id_cajon").val("");
         $("#id_tarifa").val("");
-        $("#id_empleado").val("");
+        loadDiv($("#result"), 'registro.php')
     });
 }
 
@@ -350,12 +395,12 @@ function actualizarEmpleado(idEmpleado) {
 }
 
 
-function abrirModal(idcajon){
+function abrirModal(id_cajon) {
     $("#modalPromociones").modal("show");
-    $("#id_cajon").val(idcajon);
+    $("#id_cajon").val(id_cajon);
 }
 
-function cerrarModal(){
-    $("modalPromociones").modal('hide')
+function cerrarModal() {
+    $("#modalPromociones").modal("hide");
 }
 

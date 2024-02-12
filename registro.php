@@ -63,7 +63,7 @@
             </div>
         </div>
         
-        <input type="button" class="btn btn-primary" onclick=" guardarRegistro()" value="Registrar"></input>
+        <input type="button" class="btn btn-primary" onclick=" registrarRegistro()" value="Registrar"></input>
     </form>
     <hr class="sidebar-divider my-4">
 <div class="table-responsive">
@@ -110,7 +110,7 @@
                 <td>".$result_tarifa['monto']."</td>
                 <td>".$result['fechaingreso']."</td>
                 <td>".$result['horaingreso']."</td>
-                <td><a href='#' onclick='editarRegistro(".$result['id_registro'].");'>Editar</a></td>
+                <td><a href='#' onclick='actualizarRegistro(".$result['id_registro'].");'>Editar</a></td>
                 <td><a href='#' onclick='eliminarRegistro(".$result['id_registro'].");'>Eliminar</a></td>
             </tr>";
         }
