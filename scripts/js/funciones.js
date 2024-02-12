@@ -151,14 +151,18 @@ function registrarRegistro() {
 
     var id_vehiculo = $("#id_vehiculo").val();
     var id_cajon = $("#id_cajon").val();
+    var id_empleado = $("#id_empleado").val();
     var id_tarifa = $("#id_tarifa").val();
+    
 
 
     $.post("registrarRegistro.php", {
 
         "id_vehiculo": id_vehiculo,
         "id_cajon": id_cajon,
+        "id_empleado": id_empleado,
         "id_tarifa": id_tarifa,
+      
 
     }, function (respuesta) {
         // Display an alert message based on the response from the server
@@ -176,6 +180,7 @@ function registrarRegistro() {
 
         $("#id_vehiculo").val("");
         $("#id_cajon").val("");
+        $("#id_empleado").val("");
         $("#id_tarifa").val("");
         loadDiv($("#result"), 'registro.php')
     });
