@@ -170,7 +170,7 @@ function registrarRegistro() {
                 timer: 1500
             })
         } else {
-            alert("Error al registrar");
+            alert("Error al registrar");fetch_assoc();
         }
 
 

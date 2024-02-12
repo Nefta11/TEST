@@ -46,7 +46,7 @@
                     }
                     ?>
                 </select>
-            </div>
+            </div>*/
             <div class="form-group col-md-3">
             <label for="id_cajon">ID Tarifa</label>
                 <select class="form-control" id="id_tarifa" name="id_tarifa">
@@ -63,8 +63,9 @@
             </div>
         </div>
         
-        <input type="button" class="btn btn-primary" onclick=" registrarRegistro()" value="Registrar"></input>
+        <input type="button" class="btn btn-primary" onclick="registrarRegistro()" value="Registrar"></input>
     </form>
+
     <hr class="sidebar-divider my-4">
 <div class="table-responsive">
 <table class="table">
