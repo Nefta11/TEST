@@ -1,13 +1,20 @@
 <?php
 include 'conexion.php';
 
-$idRegistro = $_POST["id_registro"];
+$id_registro = $_POST['id_registro'];
 
-$sql = "DELETE FROM registro WHERE id_registro='".$idRegistro."'";
-
-if($datos = mysqli_query($conexion, $sql)){
-    echo "Registro eliminado correctamente";
+$stmt = $conexion->prepare("DELETE FROM registro WHERE id_registro='".$id_registro."'");
+// $stmt->bind_param("ss", $tarifa, $monto);
+$stmt2 = $conexion->prepare ("UPDATE cajon SET status = 0 WHERE id_cajon = (SELECT id_cajon FROM registro WHERE id_registro = '".$id_registro."')");
+$result2 = $stmt2->execute();
+$result = $stmt->execute();
+if ($result && $result2) {
+    echo "success";
 } else {
-    echo "Error al eliminar el registro";
+    echo "error";
 }
+
+$stmt->close();
+$conexion->close();
+
 ?>

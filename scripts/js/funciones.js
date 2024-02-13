@@ -122,6 +122,12 @@ function actualizarRegistro(id_registro) {
     })
 }
 
+function cancelarOperacion() {
+
+    window.location = "menu.php";
+
+}
+
 function modificarRegistro(id_registro) {
 
     var id_vehiculo = $("#id_vehiculo").val();
@@ -130,39 +136,35 @@ function modificarRegistro(id_registro) {
 
 
     $.post("modificarRegistro.php", {
-        "id_registro": id_registro,
+        "id_registro":id_registro,
         "id_vehiculo": id_vehiculo,
         "id_cajon": id_cajon,
         "id_tarifa": id_tarifa,
 
-    }, function (result) {
+    },function (result) {
         if (result.trim() === "success") {
-            alert('Actualizado correctamente');
+           alert('Actualizado correctamente');
         }
         else {
             alert("Error al editar");
         }
-        loadDiv($("#contenido"), 'registros.php')
+        loadDiv($("#contenido"), 'registro.php')
     });
 }
 
 
 function registrarRegistro() {
 
-    var id_vehiculo = $("#id_vehiculo").val();
     var id_cajon = $("#id_cajon").val();
-    var id_empleado = $("#id_empleado").val();
+    var id_vehiculo = $("#id_vehiculo").val();
     var id_tarifa = $("#id_tarifa").val();
-    
 
 
     $.post("registrarRegistro.php", {
 
-        "id_vehiculo": id_vehiculo,
         "id_cajon": id_cajon,
-        "id_empleado": id_empleado,
+        "id_vehiculo": id_vehiculo,
         "id_tarifa": id_tarifa,
-      
 
     }, function (respuesta) {
         // Display an alert message based on the response from the server
@@ -174,15 +176,14 @@ function registrarRegistro() {
                 timer: 1500
             })
         } else {
-            alert("Error al registrar");fetch_assoc();
+            alert("Error al registrar");
         }
 
 
-        $("#id_vehiculo").val("");
         $("#id_cajon").val("");
-        $("#id_empleado").val("");
+        $("#id_vehiculo").val("");
         $("#id_tarifa").val("");
-        loadDiv($("#result"), 'registro.php')
+        loadDiv($("#result"), 'consultarRegistros.php')
     });
 }
 
@@ -196,14 +197,26 @@ function eliminarServo(idservo){
     );
 }
 
-function eliminarRegistro(idregistro){
-    $.post("eliminarRegistro.php",{
-        "id_registro":idregistro
-    },
-        function(result){
-            alert(result);
+function eliminarRegistro(id_registro) {
+    $.post("eliminarRegistro.php", {
+
+        "id_registro": id_registro
+
+    }, function (result) {
+        if (result.trim() === "success") {
+            Swal.fire({
+                icon: "warning",
+                title: "Registro eliminado",
+                showConfirmButton: false,
+                timer: 1500
+            })
         }
-    );
+        else {
+            alert("Error al eliminar");
+        }
+        loadDiv($("#result"), 'consultarRegistros.php')
+    })
+
 }
 
 function eliminarCajon(idcajon){

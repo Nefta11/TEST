@@ -69,7 +69,7 @@ while($result=$ejecutar->fetch_array()){
 
                     <div class="row ">
                         <div class="col-lg-6 ">
-                        <a href='#' class="btn btn-warning mb-2" onclick="cancelar();">Cancelar</a>
+                        <a href='#' class="btn btn-warning mb-2" onclick="cancelarOperacion();">Cancelar</a>
                             <input class="btn btn-danger mb-2" onclick="modificarRegistro(<?php echo $id_registro;?>);" type="submit" value="Actualizar datos"></input>
                         </div>
                     </div>

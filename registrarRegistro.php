@@ -6,8 +6,8 @@ $id_vehiculo = $_POST['id_vehiculo'];
 $id_cajon = $_POST['id_cajon'];
 $id_tarifa = $_POST['id_tarifa'];
 date_default_timezone_set('America/Mexico_City');           
-$fechaIngreso = date("Y-m-d");
-$horaIngreso = date("H:i:s");
+$fechaingreso = date("Y-m-d");
+$horaingreso = date("H:i:s");
 
 
 
