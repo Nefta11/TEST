@@ -3,7 +3,7 @@
 
 <?php
 include 'conexion.php';
-$query = "SELECT id_cajon, numero, status FROM cajon ORDER BY numero";
+$query = "SELECT id_cajon, numero,ocupado, status FROM cajon ORDER BY numero";
 $ejecutar =  $conexion->query($query);
 echo "<div class='row'>";
 while($result=$ejecutar->fetch_array()){
@@ -27,16 +27,22 @@ while($result=$ejecutar->fetch_array()){
             echo "<a href='#' class='btn btn-warning' onclick='eliminarRegistro(".$result2['id_registro'].")' >Salir</a>";
             
          }
+         if($result["ocupado"]==0){
+            echo "<img src='imagenes/comprobado.png' style='height:50px'>";
+          }
+          if($result["ocupado"]==1){
+            echo "<img src='imagenes/prohibido.png' style='height:50px'>";
+          }
     }
     else{
         echo "<p class='card-text'>No existe un vehiculo ocupando este cajon</p>";
         
         echo "<a href='#' class='btn btn-info' data-toggle='modal' data-target='#myModal' onclick='abrirModal(".$result['id_cajon'].")' >Ocupar</a>";
         if($result["status"]==0){
-          echo "<img src='imagenes/ñooo.jpg' style='height:50px'>";
+          echo "<img src='imagenes/comprobado.png' style='height:50px'>";
         }
-        if($result["status"]==1){
-          echo "<img src='imagenes/chiii.jpg' style='height:50px'>";
+        if($result["ocupado"]==1){
+          echo "<img src='imagenes/prohibido.png' style='height:50px'>";
         }
     }
 echo "</div></div></div>" ;

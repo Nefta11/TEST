@@ -13,7 +13,7 @@ if($ocupado==1){
         echo "Hay un vehiculo en el cajon.".$cajon;
     }
 }else{
-    $query="UPDATE cajon SET ocupado='".$ocupado"' WHERE numero='".
+    $query="UPDATE cajon SET ocupado='".$ocupado."' WHERE numero='".
     $cajon."'";
     if($datos=mysqli_query($conexion,$query)){
         echo "No hay vehiculo.".$cajon;
