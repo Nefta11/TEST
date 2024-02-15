@@ -197,6 +197,7 @@ function eliminarServo(idservo){
     );
 }
 
+
 function eliminarRegistro(id_registro) {
     $.post("eliminarRegistro.php", {
 
