@@ -196,7 +196,7 @@ function eliminarServo(idservo){
         }
     );
 }
-
+//Neftali
 
 function eliminarRegistro(id_registro) {
     $.post("eliminarRegistro.php", {
