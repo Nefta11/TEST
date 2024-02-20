@@ -35,6 +35,22 @@ function registrarServo(){
     });  
 }
 
+function registrarSensorU(){
+    var distancia=$("#distancia").val();
+    var fecha=$("#fecha").val();
+    var hora=$("#hora").val();
+    var status=$("#status").val();
+    
+    $.post("registrarSensorU.php",{"distancia":distancia,"fecha":fecha,"hora":hora,"status":status}, function(respuesta){
+        alert(respuesta);
+        $("#distancia").val("");
+        $("#fecha").val("");
+        $("#hora").val("");
+        $("#status").val("");
+    });  
+}
+
+
 function registrarCliente(){
     var nombre=$("#nombre").val();
     var correo=$("#correo").val();
