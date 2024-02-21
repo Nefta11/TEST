@@ -5,22 +5,22 @@
 <div>
     <form id="frmServo" name="frmServo">
 
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <label for="inputAddress">Distancia:</label>
                 <input type="text" class="form-control" id="distancia" name="distancia">
             </div>
 
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <label for="inputAddress">Fecha:</label>
                 <input type="date" class="form-control" id="fecha" name="fecha">
             </div>
 
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <label for="inputAddress">Hora:</label>
-                <input type="time" class="form-control" id="time" name="time">
+                <input type="time" class="form-control" id="hora" name="hora">
             </div>
 
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <label for="inputAddress">Estatus</label>
                 <select class="form-control" id="status" name="status">
                 <option value="0">0</option>
@@ -30,7 +30,7 @@
 
         </div>
         
-        <input type="button" class="btn btn-primary" onclick=" registrarSensorU();" value="Registrar"></input>
+        <input type="button" class="btn btn-primary" onclick="registrarSensorUltra();" value="Registrar"></input>
     </form>
     <hr class="sidebar-divider my-4">
     <div class="table-responsive">
@@ -56,8 +56,6 @@
                     <td>".$result['fecha']."</td>
                     <td>".$result['hora']."</td>
                     <td>".$result['status']."</td>
-                    <td><a href='#' onclick='(".$result['id_sensro'].");'>Editar</a></td>
-                    <td><a href='#' onclick='(".$result['id_sensor'].");'>Eliminar</a></td>
                     </tr>";
                 }
             ?>

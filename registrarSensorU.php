@@ -1,6 +1,7 @@
 <?php
 include 'conexion.php';
 $distancia=$_POST['distancia'];
+date_default_timezone_set('America/Mexico_City');           
 $fecha=$_POST['fecha'];
 $hora=$_POST['hora'];
 $status=$_POST['status'];

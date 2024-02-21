@@ -35,7 +35,7 @@ function registrarServo(){
     });  
 }
 
-function registrarSensorU(){
+function registrarSensorUltra(){
     var distancia=$("#distancia").val();
     var fecha=$("#fecha").val();
     var hora=$("#hora").val();

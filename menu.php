@@ -114,6 +114,13 @@
                     <span>Servo-Motor</span></a>
                     </li>
 
+                    <li class="nav-item">
+                <a class="nav-link active" onclick="cargarDiv('#contenido','sensorUltrasonico.php');" aria-current="page"
+                    href="#">
+                    <i class="fas fa-book fa-sm fa-fw mr-2 text-gray-400"></i>
+                    <span>Sensor Ultrasonico</span></a>
+                    </li>
+
             <hr class="sidebar-divider my-1">
 
             <li class="nav-item">
