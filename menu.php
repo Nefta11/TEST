@@ -74,6 +74,14 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link active" onclick="cargarDiv('#contenido','verfotoresistencia.php');" aria-current="page"
+                    href="#">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    <span>Fotorecistencia</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link active" onclick="cargarDiv('#contenido','vehiculos.php');" aria-current="page"
                     href="#">
                     <i class="fas fa-car fa-sm fa-fw mr-2 text-gray-400"></i>
