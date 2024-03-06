@@ -1,5 +1,17 @@
+<?php
+            include 'conexion.php';
 
-<h1>Dashboard</h1>
+            $query="SELECT * FROM humedad ORDER BY id_sensorH DESC LIMIT 1";
+            $data=$conexion->query($query);
+            $dataTemp=$data->fetch_array();
+?>
+<h4 style="padding-bottom: 10px; padding-top:10px">Bienvenido la temperatura de hoy es de: <b><?php echo $dataTemp['temperatura'];?>º </b> y la humedad actual esta en: <b><?php echo $dataTemp['humedad'];?>% </b> | Estatus de la luz: <?php
+    $query="SELECT * FROM fotoresistencia ORDER BY id_ftp DESC LIMIT 1";
+    $dataLigth=$conexion->query($query);
+    $dataVerify=$dataLigth->fetch_array();
+    ?>
+    <b> <?php echo $dataVerify['status'] ? "Encendido" : "Apagado" ;?> </b> 
+</h4>
 
 <?php
 include 'conexion.php';
