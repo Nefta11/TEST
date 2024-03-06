@@ -2,6 +2,7 @@
 
 include 'conexion.php';
 
+
 $ocupado=$_GET['ocupado'];
 $cajon=$_GET['cajon'];
 
