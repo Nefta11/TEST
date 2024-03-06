@@ -89,7 +89,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link active" onclick="cargarDiv('#contenido','sensorHumedad.php');" aria-current="page"
+                <a class="nav-link active" onclick="cargarDiv('#contenido','verSensorHumedad.php');" aria-current="page"
                     href="#">
                     <i class="fas fa-car fa-sm fa-fw mr-2 text-gray-400"></i>
                     <span>Sensor Humedad</span></a>
