@@ -29,17 +29,17 @@ while($result=$ejecutar->fetch_array()){
         vehiculo.id_vehiculo = registro.id_vehiculo INNER JOIN cajon ON 
         cajon.id_cajon = registro.id_cajon INNER JOIN tarifa ON 
         tarifa.id_tarifa = registro.id_tarifa INNER JOIN empleados ON
-         empleados.id_empleado = registro.id_empleado WHERE registro.id_cajon = ".$result['id_cajon']."";
-         $ejecutar2 = $conexion->query($query2);
-         while($result2 = $ejecutar2->fetch_array()){
+        empleados.id_empleado = registro.id_empleado WHERE registro.id_cajon = ".$result['id_cajon']."";
+        $ejecutar2 = $conexion->query($query2);
+        while($result2 = $ejecutar2->fetch_array()){
             echo "<h4>Matricula:".$result2['matricula']."</h4>";
             echo "<p>".$result2['fechaingreso']." ".$result2['horaingreso']."</p>";
             echo "<p>".$result2['tarifa']."</p>";
             echo "<p>".$result2['nombre']."</p>";
             echo "<a href='#' class='btn btn-warning' onclick='eliminarRegistro(".$result2['id_registro'].")' >Salir</a>";
             
-         }
-         if($result["ocupado"]==0){
+        }
+        if($result["ocupado"]==0){
             echo "<img src='imagenes/comprobado.png' style='height:50px'>";
           }
           if($result["ocupado"]==1){
