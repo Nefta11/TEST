@@ -13,6 +13,7 @@
     <b> <?php echo $dataVerify['status'] ? "Encendido" : "Apagado" ;?> </b> 
 </h4>
 
+
 <?php
 include 'conexion.php';
 $query = "SELECT id_cajon, numero,ocupado, status FROM cajon ORDER BY numero";
